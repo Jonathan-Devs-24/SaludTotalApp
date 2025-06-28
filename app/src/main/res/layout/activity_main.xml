@@ -5,15 +5,92 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#A0672AE6"
+    tools:context=".ViewModel.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="336dp"
+        android:layout_height="642dp"
+        android:background="#7BFFFFFF"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="184dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="400dp"
+        android:contentDescription="@string/btn_ingresar"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:text="@string/btn_ingresar"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2" />
+
+    <Button
+        android:id="@+id/Registro"
+        android:layout_width="157dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="480dp"
+        android:contentDescription="@string/registrarse"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:text="@string/registrarse"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="264dp"
+        android:autofillHints="emailAddress"
+        android:ems="10"
+        android:hint="@string/correo_hint"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        tools:ignore="ContentDescription"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="328dp"
+        android:autofillHints="password"
+        android:ems="10"
+        android:hint="@string/contrasenia_hint"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        tools:ignore="ContentDescription"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="187dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginEnd="75dp"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.505"
+        app:srcCompat="@drawable/saludtotallogoapp_removebg_preview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

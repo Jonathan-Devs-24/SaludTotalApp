@@ -33,6 +33,11 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
+
 }
 
 dependencies {
@@ -45,4 +50,17 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+
+    // Retrofit(Para realizar request a APIS)
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    
+    // Gson (Permite serializar data class y JSON)
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // Picasso(Visor de imagenes a travez de urls)
+    implementation("com.squareup.picasso:picasso:2.71828")
+
+    // Material, investigar...
+    implementation("com.google.android.material:material:1.11.0")
 }

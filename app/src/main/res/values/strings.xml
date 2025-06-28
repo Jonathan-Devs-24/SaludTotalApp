@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">SaludTotalApp</string>
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="correo_hint">Correo electrónico</string>
+    <string name="contrasenia_hint">Contraseña</string>
+    <string name="logo_app">Logo de la aplicación Salud Total</string>
+    <string name="registrarse">Registrarse</string>
+
+
+    <string name="nombreU_hint">Nombre</string>
+    <string name="apellidoU_hint">Apellido</string>
+    <string name="dni_hint">DNI</string>
+    <string name="fecha_hint">Fecha de nacimiento</string>
+    <string name="email_hint">Correo</string>
+    <string name="telefono_hint">Telefono</string>
 </resources>
