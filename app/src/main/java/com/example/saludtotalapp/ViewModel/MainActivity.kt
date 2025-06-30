@@ -1,14 +1,15 @@
 package com.example.saludtotalapp.ViewModel
 
-import android.os.Bundle
 import android.content.Intent
-import androidx.activity.enableEdgeToEdge
+import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.saludtotalapp.R
+import com.example.saludtotalapp.Model.Usuario
+import com.example.saludtotalapp.Network.RetrofitClient
 import com.example.saludtotalapp.databinding.ActivityMainBinding
-import com.example.saludtotalapp.databinding.RegistroBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,5 +28,27 @@ class MainActivity : AppCompatActivity() {
             startActivity(item)
         }
 
+        // Llamamos a la función para probar el consumo de la API
+        obtenerUsuarios()
+    }
+
+    private fun obtenerUsuarios() {
+        val call = RetrofitClient.instance.getUsuarios()
+        call.enqueue(object : Callback<List<Usuario>> {
+            override fun onResponse(call: Call<List<Usuario>>, response: Response<List<Usuario>>) {
+                if (response.isSuccessful) {
+                    val usuarios = response.body()
+                    usuarios?.forEach {
+                        Log.d("API", "Usuario: ${it.nombre} ${it.apellido}")
+                    }
+                } else {
+                    Log.e("API", "Error en la respuesta: ${response.code()}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Usuario>>, t: Throwable) {
+                Log.e("API", "Error de conexión: ${t.message}")
+            }
+        })
     }
 }
