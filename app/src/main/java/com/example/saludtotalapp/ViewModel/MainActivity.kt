@@ -24,31 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         // Acción del botón "Registrarse"
         binding.Registro.setOnClickListener {
-            val item = Intent(this, RegistroActivity::class.java)
+            val item = Intent(this, RegisterActivity::class.java)
             startActivity(item)
         }
-
-        // Llamamos a la función para probar el consumo de la API
-        obtenerUsuarios()
-    }
-
-    private fun obtenerUsuarios() {
-        val call = RetrofitClient.instance.getUsuarios()
-        call.enqueue(object : Callback<List<Usuario>> {
-            override fun onResponse(call: Call<List<Usuario>>, response: Response<List<Usuario>>) {
-                if (response.isSuccessful) {
-                    val usuarios = response.body()
-                    usuarios?.forEach {
-                        Log.d("API", "Usuario: ${it.nombre} ${it.apellido}")
-                    }
-                } else {
-                    Log.e("API", "Error en la respuesta: ${response.code()}")
-                }
-            }
-
-            override fun onFailure(call: Call<List<Usuario>>, t: Throwable) {
-                Log.e("API", "Error de conexión: ${t.message}")
-            }
-        })
     }
 }

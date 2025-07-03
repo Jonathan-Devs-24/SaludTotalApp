@@ -6,5 +6,6 @@ data class Usuario(
     val dni : Int,
     val correo : String,
     val telefono : Long,
+    val contrasenia : String,
     val rol : String
 );

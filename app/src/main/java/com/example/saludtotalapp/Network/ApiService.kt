@@ -10,6 +10,12 @@ import com.example.saludtotalapp.Model.Usuario
 
 
 interface ApiService {
-    @GET("usuarios")
+    @GET("usuario/todos")
     fun getUsuarios(): Call<List<Usuario>>
+
+    @POST("usuario/register")
+    fun registrarUsuario(@Body usuario: Usuario): Call<Void>
 }
+
+
+

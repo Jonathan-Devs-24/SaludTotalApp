@@ -10,8 +10,8 @@
     <string name="nombreU_hint">Nombre</string>
     <string name="apellidoU_hint">Apellido</string>
     <string name="dni_hint">DNI</string>
-    <string name="fecha_hint">Fecha de nacimiento</string>
     <string name="email_hint">Correo</string>
     <string name="telefono_hint">Telefono</string>
-    <string name="rol_hint">Rol</string>
+    <string name="spinner_rol_hint">Rol</string>
+    <string name="pass_hint">Contraseña</string>
 </resources>
