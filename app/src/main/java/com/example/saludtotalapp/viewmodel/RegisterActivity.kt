@@ -1,11 +1,11 @@
-package com.example.saludtotalapp.ViewModel
+package com.example.saludtotalapp.viewmodel
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.saludtotalapp.Model.Usuario
-import com.example.saludtotalapp.Network.RetrofitClient
+import com.example.saludtotalapp.model.Usuario
+import com.example.saludtotalapp.network.RetrofitClient
 import com.example.saludtotalapp.databinding.ActivityRegisterBinding
 import retrofit2.Call
 import retrofit2.Callback

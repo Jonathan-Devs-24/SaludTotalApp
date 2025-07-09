@@ -1,13 +1,13 @@
-package com.example.saludtotalapp.ViewModel
+package com.example.saludtotalapp.viewmodel
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.saludtotalapp.databinding.ActivityMainBinding
-import com.example.saludtotalapp.Network.RetrofitClient
-import com.example.saludtotalapp.Model.LoginDTO
-import com.example.saludtotalapp.Model.LoginResponse
+import com.example.saludtotalapp.network.RetrofitClient
+import com.example.saludtotalapp.model.LoginDTO
+import com.example.saludtotalapp.model.LoginResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

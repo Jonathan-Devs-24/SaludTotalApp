@@ -1,4 +1,4 @@
-package com.example.saludtotalapp.Model
+package com.example.saludtotalapp.model
 
 data class LoginResponse(
     val idUsuario: Int,

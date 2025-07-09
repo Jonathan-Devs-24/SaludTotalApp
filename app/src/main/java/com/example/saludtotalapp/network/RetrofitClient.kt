@@ -1,4 +1,4 @@
-package com.example.saludtotalapp.Network
+package com.example.saludtotalapp.network
 
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient

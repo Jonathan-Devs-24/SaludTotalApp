@@ -1,4 +1,4 @@
-package com.example.saludtotalapp.Model
+package com.example.saludtotalapp.model
 
 import com.google.gson.annotations.SerializedName
 

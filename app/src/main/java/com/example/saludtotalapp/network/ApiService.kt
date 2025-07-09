@@ -1,14 +1,13 @@
-package com.example.saludtotalapp.Network
+package com.example.saludtotalapp.network
 
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.POST
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
-import com.example.saludtotalapp.Model.Usuario
-import com.example.saludtotalapp.Model.LoginDTO
-import com.example.saludtotalapp.Model.LoginResponse
+import com.example.saludtotalapp.model.Usuario
+import com.example.saludtotalapp.model.LoginDTO
+import com.example.saludtotalapp.model.LoginResponse
+import com.example.saludtotalapp.model.Paciente
 
 
 interface ApiService {
@@ -25,6 +24,9 @@ interface ApiService {
     @POST("Usuario/login")
     fun login(@Body loginDTO: LoginDTO): Call<LoginResponse>
 
+    // Accede a los pacientes
+    @GET("paciente")
+    fun getPacientes(): Call<List<Paciente>>
 
 }
 
