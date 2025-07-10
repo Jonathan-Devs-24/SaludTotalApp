@@ -1,5 +1,7 @@
 package com.example.saludtotalapp.model
 
+import java.io.Serializable
+
 data class Usuario(
     val nombre : String,
     val apellido : String,
@@ -8,4 +10,4 @@ data class Usuario(
     val telefono : Long?,
     val contrasenia : String,
     val rol : String
-);
+) : Serializable

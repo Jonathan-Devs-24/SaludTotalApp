@@ -8,7 +8,8 @@ import com.example.saludtotalapp.databinding.ItemPacienteBinding
 
 class PacienteAdapter(
                       private val lista: List<Paciente>,
-                      private val onEliminarClick: (Paciente) -> Unit) :
+                      private val onEliminarClick: (Paciente) -> Unit,
+                      private val onVerClick: (Paciente) -> Unit) :
     RecyclerView.Adapter<PacienteAdapter.PacienteViewHolder>() {
 
     inner class PacienteViewHolder(val binding: ItemPacienteBinding) :
@@ -28,6 +29,10 @@ class PacienteAdapter(
 
             btnEliminar.setOnClickListener {
                 onEliminarClick(paciente)
+            }
+
+            btnVer.setOnClickListener {
+                onVerClick(paciente)
             }
         }
 

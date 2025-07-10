@@ -28,6 +28,9 @@
         </activity>
         <activity android:name=".viewmodel.RegisterActivity" />
         <activity android:name=".viewmodel.MenuAdminActivity" />
+        <activity android:name=".viewmodel.DetallePacienteActivity" />
+        <activity android:name=".viewmodel.FavoritosActivity" />
+
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.example.saludtotalapp.viewmodel
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -12,6 +13,10 @@ import com.example.saludtotalapp.view.PacienteAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import com.example.saludtotalapp.R
+
+
+
 
 class MenuAdminActivity : AppCompatActivity() {
 
@@ -24,6 +29,21 @@ class MenuAdminActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         cargarPacientes()
+
+        // Configuración del menú de navegación inferior
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_inicio -> {
+                    true
+                }
+                R.id.nav_favorite -> {
+                    val intent = Intent(this, FavoritosActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
     private fun cargarPacientes() {
@@ -35,13 +55,16 @@ class MenuAdminActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     val pacientes = response.body() ?: emptyList()
 
-                    // Usamos el adapter con lambda para eliminar
+                    // Usamos el adapter con lambda para eliminar y ver
                     binding.recyclerView.apply {
                         layoutManager = LinearLayoutManager(this@MenuAdminActivity)
-                        adapter = PacienteAdapter(pacientes) { paciente ->
-                            eliminarPaciente(paciente)
-                        }
+                        adapter = PacienteAdapter(
+                            pacientes,
+                            onEliminarClick = { paciente -> eliminarPaciente(paciente) },
+                            onVerClick = { paciente -> verPaciente(paciente) }
+                        )
                     }
+
 
                 } else {
                     Toast.makeText(this@MenuAdminActivity, "Error en la respuesta", Toast.LENGTH_SHORT).show()
@@ -76,5 +99,15 @@ class MenuAdminActivity : AppCompatActivity() {
             }
             .setNegativeButton("Cancelar", null)
             .show()
+    }
+
+    private fun verPaciente(paciente: Paciente) {
+        val intent = Intent(this, DetallePacienteActivity::class.java)
+        intent.putExtra("nombre", paciente.usuario.nombre)
+        intent.putExtra("apellido", paciente.usuario.apellido)
+        intent.putExtra("dni", paciente.usuario.dni)
+        intent.putExtra("afiliacion", paciente.numeroAfliado)
+        intent.putExtra("observaciones", paciente.observacion ?: "")
+        startActivity(intent)
     }
 }
