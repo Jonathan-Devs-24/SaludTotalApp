@@ -35,6 +35,24 @@
             android:layout_height="wrap_content"
             android:text="Afiliado: 999999"
             android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/btnVer"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:text="Ver" />
+
+        <Button
+            android:id="@+id/btnEditar"
+            android:layout_width="129dp"
+            android:layout_height="wrap_content"
+            android:text="Editar" />
+
+        <Button
+            android:id="@+id/btnEliminar"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:text="Eliminar" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

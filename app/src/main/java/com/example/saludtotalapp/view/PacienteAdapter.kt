@@ -6,7 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.saludtotalapp.model.Paciente
 import com.example.saludtotalapp.databinding.ItemPacienteBinding
 
-class PacienteAdapter(private val lista: List<Paciente>) :
+class PacienteAdapter(
+                      private val lista: List<Paciente>,
+                      private val onEliminarClick: (Paciente) -> Unit) :
     RecyclerView.Adapter<PacienteAdapter.PacienteViewHolder>() {
 
     inner class PacienteViewHolder(val binding: ItemPacienteBinding) :
@@ -23,7 +25,13 @@ class PacienteAdapter(private val lista: List<Paciente>) :
             tvNombre.text = "${paciente.usuario.nombre} ${paciente.usuario.apellido}"
             tvDni.text = "DNI: ${paciente.usuario.dni}"
             tvAfiliacion.text = "Afiliado: ${paciente.numeroAfliado}"
+
+            btnEliminar.setOnClickListener {
+                onEliminarClick(paciente)
+            }
         }
+
+
     }
 
     override fun getItemCount() = lista.size
